@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Neutral / Base State */
+  --accent-color: #94a3b8; /* Slate 400 */
+  --glow-color: rgba(148, 163, 184, 0.2);
+}
+
+/* PM Persona - The Gold Strategy */
+.theme-pm {
+  --accent-color: #fbbf24; /* alchemy-gold */
+  --glow-color: rgba(251, 191, 36, 0.4);
+}
+
+/* Dev Persona - The Cyan Innovation */
+.theme-dev {
+  --accent-color: #22d3ee; /* alchemy-cyan */
+  --glow-color: rgba(34, 211, 238, 0.4);
+}
+
+/* Global utility for dynamic borders/text */
+.border-dynamic { border-color: var(--accent-color); }
+.text-dynamic { color: var(--accent-color); }
+.shadow-dynamic { box-shadow: 0 0 20px var(--glow-color); }
