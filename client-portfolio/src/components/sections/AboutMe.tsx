@@ -10,30 +10,24 @@ export default function AboutMe() {
   const content = {
     dev: {
       subtitle: "The Architect in the Machine",
-      quote:
-        "I don't just build systems; I transmute complexity into clarity. Where others see fragmented code, I see a high-performance ecosystem.",
-      description:
-        "As a Full-Stack Developer, I understand the weight of a semicolon and the elegance of scalable architecture. My focus is on writing clean, alchemical code that powers human potential.",
+      quote: "I don't just build systems; I transmute complexity into clarity. Where others see fragmented code, I see a high-performance ecosystem.",
+      description: "As a Full-Stack Developer, I understand the weight of a semicolon and the elegance of scalable architecture. My focus is on writing clean, alchemical code that powers human potential."
     },
     pm: {
       subtitle: "The Strategist of Transformation",
-      quote:
-        "I don't just manage tasks; I orchestrate growth. Where others see a gap between business goals and technical execution, I see a bridge.",
-      description:
-        "As a Project Manager, I understand the weight of a deadline and the power of Agile flow. My mission is to ensure that both the systems we build and the teams I lead are empowered to deliver excellence.",
-    },
+      quote: "I don't just manage tasks; I orchestrate growth. Where others see a gap between business goals and technical execution, I see a bridge.",
+      description: "As a Project Manager, I understand the weight of a deadline and the power of Agile flow. My mission is to ensure that both the systems we build and the teams I lead are empowered to deliver excellence."
+    }
   };
 
   const current = content[activePersona as "pm" | "dev"];
 
   return (
-    <section
-      id="about"
-      className="py-24 px-6 border-b border-white/5 relative overflow-hidden bg-black"
-    >
+    <section id="about" className="py-24 px-6 border-b border-white/5 relative overflow-hidden bg-black">
       <div className="max-w-6xl mx-auto space-y-16">
+        
         {/* Header Section */}
-        <motion.div
+        <motion.div 
           key={activePersona + "-header"}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -49,11 +43,37 @@ export default function AboutMe() {
         </motion.div>
 
         {/* --- Content and Image Grid --- */}
-        {/* --- Updated Content and Image Grid --- */}
-        <div className="grid md:grid-cols-[2fr,1fr] gap-12 items-center">
-          {/* TEXT BLOCK: The Philosophy (Now on the Left) */}
-          <div className="space-y-10 order-2 md:order-1">
-            <motion.div
+        <div className="grid md:grid-cols-[1fr,2fr] gap-12 items-center">
+          
+          {/* IMAGE BLOCK: The "Identity Signal" */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative flex justify-center md:justify-start"
+          >
+            {/* The Alchemical Border Effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/40 to-cyan-500/40 rounded-full blur-2xl opacity-40 scale-110" />
+            
+            {/* The Actual Picture Container */}
+            <div className="relative aspect-square w-48 h-48 sm:w-60 sm:h-60 rounded-full border-4 border-[#D4AF37]/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] overflow-hidden group">
+              <Image 
+                src="/meron-solomon.jpg" // CHANGE THIS to your actual image path
+                alt="Meron Solomon - The Alchemist of Potential"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                sizes="(max-w-768px) 192px, 240px"
+                priority // IMPORTANT: Tells Next.js to load this instantly (Hero Image)
+              />
+              
+              {/* Subtle Overlay to make the image blend with the black theme */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/60 opacity-60" />
+            </div>
+          </motion.div>
+
+          {/* TEXT BLOCK: The Philosophy */}
+          <div className="space-y-10">
+            <motion.div 
               key={activePersona + "-quote"}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -64,7 +84,7 @@ export default function AboutMe() {
               </p>
             </motion.div>
 
-            <motion.div
+            <motion.div 
               key={activePersona + "-desc"}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -73,32 +93,11 @@ export default function AboutMe() {
             >
               <p>{current.description}</p>
               <p>
-                My work is dedicated to ensuring that both the products I build
-                and the people I touch are left more valuable and empowered.
+                My work is dedicated to ensuring that both the products I build and the 
+                people I touch are left more valuable and empowered.
               </p>
             </motion.div>
           </div>
-
-          {/* IMAGE BLOCK: The "Identity Signal" (Now on the Right) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative flex justify-center md:justify-end order-1 md:order-2"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/20 to-cyan-500/20 rounded-full blur-3xl opacity-30 scale-125" />
-
-            <div className="relative aspect-square w-48 h-48 sm:w-64 sm:h-64 rounded-2xl border border-white/10 overflow-hidden group">
-              <Image
-                src="/meron-solomon.jpg"
-                alt="Meron Solomon"
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
