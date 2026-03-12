@@ -35,33 +35,6 @@ export default function Footer() {
           <p className="text-[8px] font-mono uppercase tracking-[0.3em] text-slate-600">
             Switch_Perspective
           </p>
-          <div className="relative flex items-center bg-white/5 rounded-full p-0.5 border border-white/10">
-            <motion.div
-              className="absolute h-6 bg-[#D4AF37] rounded-full"
-              initial={false}
-              animate={{
-                width: persona === "dev" ? "45px" : "40px",
-                x: persona === "dev" ? 0 : "45px",
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            />
-            <button
-              onClick={() => setPersona("dev")}
-              className={`relative z-10 px-3 py-1 text-[8px] uppercase tracking-tighter transition-colors ${
-                persona === "dev" ? "text-black font-bold" : "text-slate-500"
-              }`}
-            >
-              Dev
-            </button>
-            <button
-              onClick={() => setPersona("pm")}
-              className={`relative z-10 px-3 py-1 text-[8px] uppercase tracking-tighter transition-colors ${
-                persona === "pm" ? "text-black font-bold" : "text-slate-500"
-              }`}
-            >
-              PM
-            </button>
-          </div>
         </div>
 
         <div className="h-[1px] w-8 bg-[#D4AF37]/20 mx-auto" />

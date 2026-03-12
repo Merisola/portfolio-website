@@ -126,7 +126,7 @@ export default function PersonaPage() {
         </section>
       </main>
 
-      <Footer persona={activePersona} setPersona={setPersona} />
+      <Footer />
     </div>
   );
 }

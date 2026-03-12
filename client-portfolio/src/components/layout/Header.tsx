@@ -19,7 +19,7 @@ export default function Header({
           </div>
         </Link>
 
-        {/* Center: Primary Navigation */}
+        {/* Center: Context-Aware Navigation */}
         <nav className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] text-slate-400">
           <Link
             href="#skills"
@@ -27,19 +27,52 @@ export default function Header({
           >
             Skills
           </Link>
+
           <Link
             href="#portfolio"
             className="hover:text-[#D4AF37] transition-all hover:tracking-[0.3em]"
           >
             Portfolio
           </Link>
+
+          {/* Conditional Link: Snippets for Dev, Methodology for PM */}
+          {persona === "dev" ? (
+            <Link
+              href="#snippets"
+              className="hover:text-[#D4AF37] transition-all hover:tracking-[0.3em]"
+            >
+              Snippets
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="#methodology"
+                className="hover:text-[#D4AF37] transition-all hover:tracking-[0.3em]"
+              >
+                Methodology
+              </Link>
+              <Link
+                href="#cases"
+                className="hover:text-[#D4AF37] transition-all hover:tracking-[0.3em]"
+              >
+                Cases
+              </Link>
+            </>
+          )}
+
+          {/* Universal Link */}
           <Link
-            href="#snippets"
+            href="#contact"
             className="hover:text-[#D4AF37] transition-all hover:tracking-[0.3em]"
           >
-            Snippets
+            Contact
           </Link>
         </nav>
+
+        {/* Right Area: Optional Persona Switcher or System Status */}
+        <div className="text-[9px] text-[#D4AF37]/50 uppercase tracking-widest hidden sm:block">
+          Mode: {persona}_Production
+        </div>
       </div>
     </header>
   );
