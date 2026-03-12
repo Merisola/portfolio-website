@@ -32,7 +32,7 @@ export default function DevPage() {
             Technical_Core.init()
           </h2>
           <p className="text-[10px] text-slate-500 font-mono mt-2">
-            // Interact to disrupt the equilibrium
+            {/* Interact to disrupt the equilibrium */}
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function DevPage() {
             System.<span className="text-alchemy-gold">build</span>()
           </h1>
           <p className="text-slate-500 mt-2 font-mono text-sm">
-            // Tangible outcomes of the alchemical process.
+            {/* Tangible outcomes of the alchemical process. */}
           </p>
         </header>
 
