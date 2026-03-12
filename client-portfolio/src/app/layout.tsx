@@ -8,6 +8,8 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+
+
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-mono",
@@ -16,6 +18,9 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: "The Alchemist | PM & Fullstack Dev",
   description: "Transforming challenges into clarity and code into potential.",
+  icons: {
+    icon: "/fav1.ico",
+  },
 };
 
 export default function RootLayout({
