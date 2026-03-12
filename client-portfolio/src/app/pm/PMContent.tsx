@@ -30,7 +30,7 @@ export default function PMContent() {
       <Header persona={activePersona} setPersona={setPersona} />
 
       {/* ADD THIS HERE */}
-      <div className="pt-24">
+      <div className="pt-25">
         <AboutMe />
       </div>
 
@@ -48,7 +48,7 @@ export default function PMContent() {
         {/* 2. Portfolio/Projects */}
         <section
           id="portfolio"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="scroll-mt-28 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {pmProjects.map((p) => (
             <ProjectCard key={p.title} project={p} />
@@ -56,12 +56,12 @@ export default function PMContent() {
         </section>
 
         {/* 3. Methodology */}
-        <section id="methodology">
+        <section id="methodology" className="scroll-mt-5">
           <StrategyShowcase />
         </section>
 
         {/* 4. Cases (Last before footer/contact) */}
-        <section id="cases" className="pb-20">
+        <section id="cases" className="pb-20 scroll-mt-20">
           <CaseStudySection />
         </section>
       </div>
