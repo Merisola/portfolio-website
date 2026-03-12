@@ -7,6 +7,7 @@ import StrategyShowcase from "@/components/sections/StrategyShowcase";
 import CaseStudySection from "@/components/sections/CaseStudySection";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import ContactForm from "@/components/layout/ContactForm";
+import AboutMe from "@/components/sections/AboutMe";
 
 const pmProjects = [
   {
@@ -27,6 +28,16 @@ export default function PMContent() {
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <Header persona={activePersona} setPersona={setPersona} />
+
+      {/* ADD THIS HERE */}
+      <div className="pt-24">
+        <AboutMe />
+      </div>
+
+      <div className="px-6 max-w-7xl mx-auto space-y-32">
+        {/* ... Skills, Portfolio, etc. ... */}
+      </div>
+      {/* ... */}
 
       <div className="pt-24 px-6 max-w-7xl mx-auto space-y-32">
         {/* 1. Skills */}
@@ -60,7 +71,7 @@ export default function PMContent() {
       </section>
 
       {/* Fixing the error requires checking the Footer.tsx file definition */}
-      <Footer/>
+      <Footer />
     </main>
   );
 }

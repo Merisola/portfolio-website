@@ -7,6 +7,7 @@ import CodeShowcase from "@/components/sections/CodeShowcase";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/layout/ContactForm"; // Added import
+import AboutMe from "@/components/sections/AboutMe"; // Added import
 
 const devProjects = [
   {
@@ -47,6 +48,17 @@ export default function PersonaPage() {
       <Header persona={activePersona} setPersona={setPersona} />
 
       <main className="pt-16">
+
+        {/* NEW SECTION 0: THE MANIFESTO (About) */}
+        <AboutMe />
+
+        {/* SECTION 1: THE LAB (Skills) */}
+        <section id="skills" className="...">
+          {/* ... existing skills code ... */}
+        </section>
+        
+        {/* ... rest of your sections ... */}
+
         {/* SECTION 1: THE LAB (Skills) */}
         <section
           id="skills"
