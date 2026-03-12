@@ -11,7 +11,6 @@ export default function Header({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // 0.1% Improvement: Prevent background scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -37,11 +36,45 @@ export default function Header({
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between font-mono">
         <Link
           href="/"
-          className="group flex-shrink-0"
+          className="group flex items-center gap-3"
           onClick={() => setIsOpen(false)}
         >
-          <div className="text-xs tracking-[0.3em] text-slate-500 group-hover:text-[#D4AF37] transition-colors">
-            SYSTEM.<span className="text-white">INIT</span>()
+          {/* Logo Animation Container */}
+          <div className="relative flex items-center justify-center">
+            {/* Pulsing Aura around the seal */}
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-md"
+            />
+
+            <motion.img
+              src="/meron.png"
+              alt="The MeronWay Logo"
+              className="h-9 w-9 relative z-10 brightness-110 contrast-125"
+              whileHover={{
+                rotate: 15,
+                scale: 1.1,
+                filter: "drop-shadow(0px 0px 8px rgba(212, 175, 55, 0.5))",
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <div className="text-[10px] leading-tight tracking-[0.4em] text-slate-500 group-hover:text-[#D4AF37] transition-colors">
+              THE<span className="text-white">MERONWAY</span>()
+            </div>
+            <div className="text-[7px] tracking-[0.6em] text-[#D4AF37]/40 uppercase">
+              Alchemist_Active
+            </div>
           </div>
         </Link>
 
@@ -58,6 +91,7 @@ export default function Header({
           ))}
         </nav>
 
+        {/* Mobile Toggle */}
         <div className="flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -83,10 +117,9 @@ export default function Header({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 20 }} // Subtle slide instead of just fade
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            // h-screen and fixed inset-0 ensure it fills the viewport exactly
             className="fixed inset-0 h-screen bg-[#050505] z-[105] flex flex-col items-center justify-center md:hidden"
           >
             <div className="absolute top-10 text-[9px] text-[#D4AF37]/30 uppercase tracking-[0.5em]">

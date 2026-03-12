@@ -47,7 +47,7 @@ export default function PersonaPage() {
     <div className="min-h-screen bg-[#050505] text-white">
       <Header persona={activePersona} setPersona={setPersona} />
 
-      <main className="pt-16">
+      <main className="pt-4">
 
         {/* NEW SECTION 0: THE MANIFESTO (About) */}
         <AboutMe />
