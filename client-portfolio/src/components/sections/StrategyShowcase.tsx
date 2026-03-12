@@ -16,8 +16,8 @@ export default function StrategyShowcase() {
             Strategic_Framework.execute()
           </h2>
           <p className="text-slate-400 font-mono text-xs max-w-xl leading-relaxed">
-            // Transforming organizational friction into engineering momentum
-            through disciplined Agile methodologies and stakeholder alignment.
+             {/* Transforming organizational friction into engineering momentum */}
+            {/* through disciplined Agile methodologies and stakeholder alignment. */}
           </p>
         </div>
 
