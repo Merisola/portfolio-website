@@ -97,7 +97,7 @@ export default function TechnicalSkillCloud({ persona }: SkillCloudProps) {
  };
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center bg-[#050505] py-20 overflow-hidden">
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center bg-[#050505] py-9 overflow-hidden">
       <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
         <div
           className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] border-2 rounded-full animate-pulse"

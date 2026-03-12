@@ -64,7 +64,7 @@ export default function PersonaPage() {
           id="skills"
           className="relative min-h-[90vh] flex flex-col justify-center border-b border-white/5"
         >
-          <div className="absolute top-24 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none w-full">
+          <div className="absolute top-15 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none w-full">
             <motion.h2
               key={activePersona + "-title"}
               initial={{ opacity: 0, y: -10 }}

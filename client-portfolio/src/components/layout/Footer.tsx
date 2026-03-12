@@ -78,12 +78,8 @@ export default function Footer() {
         <div className="h-[1px] w-8 bg-[#D4AF37]/20 mx-auto" />
 
         {/* Metadata Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
           <p>© {currentYear} — Alchemist of Potential</p>
-          <div className="flex gap-10 opacity-40 select-none">
-            <span>LOC: ETH_ADDIS</span>
-            <span>PING: 24MS</span>
-          </div>
         </div>
       </div>
     </footer>

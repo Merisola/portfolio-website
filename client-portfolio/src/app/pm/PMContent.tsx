@@ -39,7 +39,7 @@ export default function PMContent() {
       </div>
       {/* ... */}
 
-      <div className="pt-24 px-6 max-w-7xl mx-auto space-y-32">
+      <div className="pt-20 px-6 max-w-7xl mx-auto space-y-32">
         {/* 1. Skills */}
         <section id="skills">
           <SkillCloud persona="pm" />
