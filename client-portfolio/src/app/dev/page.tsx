@@ -6,58 +6,24 @@ import SkillCloud from "@/components/sections/SkillCloud";
 import CodeShowcase from "@/components/sections/CodeShowcase";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ContactForm from "@/components/layout/ContactForm"; // Added import
-import AboutMe from "@/components/sections/AboutMe"; // Added import
-
-const devProjects = [
-  {
-    title: "Alchemize-UI",
-    description: "A headless component library built with Radix UI and Tailwind CSS.",
-    stack: ["Next.js", "TypeScript", "Framer Motion"],
-    github: "https://github.com/youruser/alchemize",
-    live: "https://alchemize.dev",
-  },
-  {
-    title: "Nexus Ledger",
-    description: "Full-stack financial tracking app with real-time data visualization.",
-    stack: ["Node.js", "PostgreSQL", "Prisma", "Chart.js"],
-    github: "https://github.com/youruser/nexus-ledger",
-    live: "https://nexus-ledger.app",
-  },
-];
-
-const pmProjects = [
-  {
-    title: "Agile Transformation Lab",
-    description: "Scaling engineering velocity by 40% through custom Jira workflows and sprint optimization.",
-    stack: ["Agile", "Scrum", "Jira", "Stakeholder Mgmt"],
-    github: "#",
-    live: "#",
-  },
-];
+import ContactForm from "@/components/layout/ContactForm";
+import AboutMe from "@/components/sections/AboutMe";
+// CLEAN IMPORT: Using the TS file, not the JSON
+import { devProjects, pmProjects } from "@/data/projects";
 
 export default function PersonaPage() {
   const { persona, setPersona } = usePersona();
 
-  // Resolved TS Error: Narrowing the type for components that don't accept "neutral"
-  const activePersona = (persona === "neutral" ? "dev" : persona) as "pm" | "dev";
+  const activePersona = (persona === "neutral" ? "dev" : persona) as
+    | "pm"
+    | "dev";
   const projects = activePersona === "dev" ? devProjects : pmProjects;
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
       <Header persona={activePersona} setPersona={setPersona} />
-
       <main className="pt-4">
-
-        {/* NEW SECTION 0: THE MANIFESTO (About) */}
         <AboutMe />
-
-        {/* SECTION 1: THE LAB (Skills) */}
-        <section id="skills" className="...">
-          {/* ... existing skills code ... */}
-        </section>
-        
-        {/* ... rest of your sections ... */}
 
         {/* SECTION 1: THE LAB (Skills) */}
         <section
@@ -75,18 +41,7 @@ export default function PersonaPage() {
                 ? "Technical_Core.init()"
                 : "Strategic_Engine.init()"}
             </motion.h2>
-            <motion.p
-              key={activePersona + "-desc"}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-[10px] text-slate-500 font-mono mt-2"
-            >
-              {activePersona === "dev"
-                ? "// Manipulate the cloud to see the stack."
-                : "// Interaction defines the strategy."}
-            </motion.p>
           </div>
-
           <SkillCloud persona={activePersona} />
         </section>
 
@@ -97,11 +52,6 @@ export default function PersonaPage() {
               {activePersona === "dev" ? "System." : "Strategy."}
               <span className="text-[#D4AF37]">build</span>()
             </h1>
-            <p className="text-slate-500 mt-2 font-mono text-sm">
-              {activePersona === "dev"
-                ? "// Tangible outcomes of the alchemical process."
-                : "// High-impact delivery through disciplined management."}
-            </p>
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -119,7 +69,7 @@ export default function PersonaPage() {
           </div>
         </section>
 
-        {/* SECTION 3: THE BLUEPRINT (Snippet) */}
+        {/* ... (Snippets & Contact remain the same) ... */}
         <section id="snippets">
           {activePersona === "dev" ? (
             <CodeShowcase />
@@ -132,12 +82,10 @@ export default function PersonaPage() {
           )}
         </section>
 
-        {/* SECTION 4: THE CONNECTION (Contact) */}
         <section id="contact" className="border-t border-white/5 bg-[#050505]">
           <ContactForm />
         </section>
       </main>
-
       <Footer />
     </div>
   );

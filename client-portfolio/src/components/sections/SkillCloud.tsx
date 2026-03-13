@@ -106,7 +106,7 @@ export default function TechnicalSkillCloud({ persona }: SkillCloudProps) {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[220px] h-[220px] md:w-[350px] md:h-[350px] border-2 border-dashed rounded-full"
+          className="absolute w-[220px] h-[220px] md:w-[350px] md:h-[350px] border-4 border-dashed rounded-full"
           style={{ borderColor: `${themeColor}66` }}
         />
       </div>
